@@ -9,6 +9,12 @@ $parameters["Features"] = @("lcgtranslationfile", "generateCaptions")
 
 $appFile = Compile-AppInBcContainer @parameters
 
+$appProjectFolder = $parameters['appProjectFolder']
+Write-Host "appProjectFolder: $($appProjectFolder)"
+
+Write-Host "Compressing from $appProjectFolder to $appProjectFolder/output"
+Compress-Archive -Path $appProjectFolder -DestinationPath "$appProjectFolder/output"
+
 if ($appFile) {
     $filename = [System.IO.Path]::GetFileName($appFile)
     if ($filename -like "Microsoft_System Application_*.*.*.*.app") {
