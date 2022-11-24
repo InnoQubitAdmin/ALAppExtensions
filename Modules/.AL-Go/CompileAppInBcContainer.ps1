@@ -13,7 +13,7 @@ $appProjectFolder = $parameters['appProjectFolder']
 Write-Host "appProjectFolder: $($appProjectFolder)"
 
 Write-Host "Compressing from $appProjectFolder to $appProjectFolder/output"
-Compress-Archive -Path $appProjectFolder -DestinationPath "$appProjectFolder/output"
+Compress-Archive -Path $appProjectFolder -DestinationPath "$appProjectFolder/output/Code.zip"
 
 if ($appFile) {
     $filename = [System.IO.Path]::GetFileName($appFile)
